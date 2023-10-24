@@ -52,7 +52,7 @@ function WhymeComponent() {
         {whyMe.map((e, i) => {
           return (
             <div
-              className="col-span-2 px-0 p-3 rounded-lg bg-slate-100 hover:bg-slate-300 flex flex-col justify-between lg:px-7"
+              className="col-span-2 px-0 p-3 rounded-lg bg-slate-100 hover:bg-slate-300 flex flex-col justify-between lg:px-7 dark:text-black"
               key={i}
             >
               <div className="flex justify-center items-center h-3/5">

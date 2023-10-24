@@ -4,7 +4,7 @@ import logo from "../../public/logo-perusahaan.png";
 
 function TentangKamiHome() {
   return (
-    <div className="w-full py-12 px-3 lg:px-12 bg-slate-100">
+    <div className="w-full py-12 px-3 lg:px-12 bg-slate-100 dark:text-black ">
       <div className="text-xl font-medium p-3">Tentang Kami</div>
       <div className="grid grid-cols-3 p-3 md:mb-8 mt-5">
         <div className="col-span-3 md:col-span-1 flex justify-center items-center">

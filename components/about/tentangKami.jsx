@@ -4,7 +4,7 @@ import logo from "../../public/logo-perusahaan.png";
 
 function TentangKamiComponent() {
   return (
-    <div className="bg-slate-100 w-full h-full p-6 py-10 lg:p-12">
+    <div className="bg-slate-100 w-full h-full p-6 py-10 lg:p-12 dark:text-black">
       <div className="container mx-auto lg:px-12 lg:w-3/4">
         <div className="text-xl lg:text-2xl font-medium py-5">Tentang Kami</div>
         <div className="flex justify-center items-center py-5">

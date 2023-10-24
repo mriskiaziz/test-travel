@@ -54,7 +54,7 @@ function ProgramHomeComponent() {
   };
 
   return (
-    <div className="w-full py-12 px-3 lg:px-12 bg-slate-100">
+    <div className="w-full py-12 px-3 lg:px-12 bg-slate-100 dark:text-black">
       <div className="text-xl font-medium p-3 md:pb-12">Program</div>
 
       <div className="relative flex items-center lg:mx-4 pb-7">
