@@ -46,8 +46,8 @@ function NavbarComponent() {
   };
 
   return (
-    <nav className="bg-white sticky w-full z-20 top-0 left-0 shadow-lg ">
-      <div className=" bg-white md:bg-transparent max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3">
+    <nav className="bg-white sticky w-full z-20 top-0 left-0 shadow-lg dark:text-black ">
+      <div className=" bg-white md:bg-transparent max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3 dark:text-black">
         <a href="#" className="flex items-center">
           <Image
             src={logo}
