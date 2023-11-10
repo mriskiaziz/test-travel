@@ -10,11 +10,10 @@ export default function withAuth(middleware, requireAuth = []) {
         req,
         secret: process.env.NEXTAUTH_SECRET,
       });
+      console.log(token);
 
       if (!token) {
-        console.log("masuk");
         const url = new URL("/login", req.url);
-
         return NextResponse.redirect(url);
       }
     }

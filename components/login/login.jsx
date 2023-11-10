@@ -26,6 +26,7 @@ function LoginComponent() {
           password,
           role,
           redirect: false,
+          callbackUrl: "http://localhost:3000/admin",
         });
 
         if (res.error) {
@@ -35,7 +36,7 @@ function LoginComponent() {
         } else {
           setLoading(false);
           console.log(res);
-          router.replace(role);
+          router.replace("admin");
         }
       } catch (error) {
         setError(error);
