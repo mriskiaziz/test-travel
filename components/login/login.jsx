@@ -34,6 +34,7 @@ function LoginComponent() {
           return;
         } else {
           setLoading(false);
+          console.log(res);
           router.replace(role);
         }
       } catch (error) {
