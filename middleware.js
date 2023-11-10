@@ -1,17 +1,9 @@
-import { getToken } from 'next-auth/jwt'
-import { NextResponse } from 'next/server' 
+import { NextResponse } from "next/server";
+import withAuth from "./middlewares/withAuth";
 
-
-export async function middleware(req) {
-  const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
-
-  if (token) {
-      return NextResponse.next()    
-  }else{
-    return NextResponse.redirect(new URL('/login', req.url))
-  }
+export async function mainMiddleware(req) {
+  const res = NextResponse.next();
+  return res;
 }
- 
-export const config = {
-  matcher: ['/admin/:path*']
-}
+
+export default withAuth(mainMiddleware, ["/admin"]);
