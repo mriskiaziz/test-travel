@@ -15,7 +15,7 @@ export const authOptions = {
       credentials: {
         email: { label: "Email", type: "email" },
         password: { label: "Password", type: "password" },
-        password: { label: "Role", type: "text" }
+        role: { label: "Role", type: "text" }
       },
       async authorize(credentials, req) {
         const { email, password, role } = credentials;
