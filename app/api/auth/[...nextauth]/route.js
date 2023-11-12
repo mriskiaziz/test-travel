@@ -14,13 +14,12 @@ export const authOptions = {
       name: "Credentials",
       credentials: {
         email: { label: "Email", type: "email" },
-        password: { label: "Password", type: "password" },
-        role: { label: "Role", type: "text" }
+        password: { label: "Password", type: "password" }
       },
       async authorize(credentials, req) {
-        const { email, password, role } = credentials;
+        const { email, password } = credentials;
 
-        const user = await UserChecker(email, password, role);
+        const user = await UserChecker(email, password);
 
         if (user) {
           return user
@@ -35,14 +34,12 @@ export const authOptions = {
 
         if (account) {
         token.accessToken = account.access_token
-        token.role = user.role
         }
 
         return token
     },
     async session({ session, token}) {
         session.accessToken = token.accessToken
-        session.user.role = token.role
 
         return session
     }

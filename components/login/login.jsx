@@ -18,13 +18,12 @@ function LoginComponent() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (email != "" && password != "" && role != "") {
+    if (email != "" && password != "") {
       setLoading(true);
       try {
         const res = await signIn("credentials", {
           email,
           password,
-          role,
           redirect: false,
           callbackUrl: "http://localhost:3000/admin",
         });
@@ -74,17 +73,6 @@ function LoginComponent() {
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
               required
             />
-          </div>
-          <div className="mb-6">
-            <select
-              onChange={(e) => setRole(e.target.value)}
-              className="block w-full p-2 mb-6 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 "
-            >
-              <option>Pilih Login Sebagai</option>
-              <option value="admin">Admin</option>
-              <option value="user">Jamaah</option>
-              <option value="mitra">Mitra</option>
-            </select>
           </div>
 
           <button
