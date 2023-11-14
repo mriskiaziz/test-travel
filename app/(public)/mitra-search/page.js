@@ -1,8 +1,10 @@
-import React from 'react'
+import MitraComponent from "@/components/mitra/page"
 
 function MitraSearchPage() {
   return (
-    <div>MitraSearchPage</div>
+    <div>
+      <MitraComponent />
+    </div>
   )
 }
 

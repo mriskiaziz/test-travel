@@ -35,7 +35,7 @@ function LoginComponent() {
         } else {
           setLoading(false);
           console.log(res);
-          router.replace("admin");
+          router.replace("error");
         }
       } catch (error) {
         setError(error);
@@ -47,12 +47,12 @@ function LoginComponent() {
   };
 
   return (
-    <div className="absolute flex justify-center items-center h-full w-full">
-      <div className="h-auto w-3/4 md:w-1/3 border border-black p-4">
-        <form onSubmit={handleSubmit}>
+    <div className="absolute flex justify-center items-center h-full w-full bg-[#E5E9F4] ">
+      <div className="h-auto w-3/4 md:w-1/3 border border-[#2B458D] rounded-lg p-4 bg-slate-100 ">
+        <form onSubmit={handleSubmit} className=" text-center">
           <label
             htmlFor="#"
-            className="flex justify-center pb-10 pt-2 text-xl font-semibold"
+            className="flex justify-center pb-10 pt-5 text-xl font-semibold"
           >
             LOGIN
           </label>
@@ -60,7 +60,7 @@ function LoginComponent() {
             <input
               onChange={(e) => setEmail(e.target.value)}
               type="email"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              className="bg-slate-100 border-[#2B458D] border  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               placeholder="Email"
               required
             />
@@ -70,14 +70,14 @@ function LoginComponent() {
               onChange={(e) => setPassword(e.target.value)}
               type="password"
               placeholder="password"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+              className="bg-slate-100 border-[#2B458D] border  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
               required
             />
           </div>
 
           <button
             type="submit"
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center "
+            className="text-white mt-5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center "
             disabled={loading ? true : false}
           >
             {loading ? (

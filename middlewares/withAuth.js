@@ -7,6 +7,17 @@ export default function withAuth(middleware, requireAuth = []) {
   return async (req, next) => {
     const pathname = req.nextUrl.pathname;
 
+    if (pathname == "/login") {
+      const token = await getToken({ req, secret });
+
+      if (token) {
+        const url = new URL("/admin", req.url);
+        return NextResponse.redirect(url);
+      }else{
+        return NextResponse.next();
+      }
+    }
+
     if (requireAuth.includes(pathname)) {
       const token = await getToken({ req, secret });
       console.log(token);
