@@ -11,6 +11,7 @@ export default function withAuth(middleware, requireAuth = []) {
       const token = await getToken({ req, secret });
 
       if (token) {
+        console.log(token);
         const url = new URL("/admin", req.url);
         return NextResponse.redirect(url);
       }else{
@@ -20,6 +21,7 @@ export default function withAuth(middleware, requireAuth = []) {
 
     if (requireAuth.includes(pathname)) {
       const token = await getToken({ req, secret });
+      console.log(token);
 
       if (!token) {
         const url = new URL("/login", req.url);
