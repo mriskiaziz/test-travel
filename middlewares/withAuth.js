@@ -1,3 +1,4 @@
+"use server"
 import { getToken } from "next-auth/jwt";
 import { NextResponse } from "next/server";
 
@@ -9,9 +10,9 @@ export default function withAuth(middleware, requireAuth = []) {
 
     if (pathname == "/login") {
       const token = await getToken({ req});
+      console.log(token);
 
       if (token) {
-        console.log(token);
         const url = new URL("/admin", req.url);
         return NextResponse.redirect(url);
       }else{
