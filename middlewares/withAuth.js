@@ -20,8 +20,6 @@ export default function withAuth(middleware, requireAuth = []) {
 
     if (requireAuth.includes(pathname)) {
       const token = await getToken({ req, secret });
-      console.log(token);
-      console.log(req);
 
       if (!token) {
         const url = new URL("/login", req.url);

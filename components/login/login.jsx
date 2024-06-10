@@ -34,8 +34,7 @@ function LoginComponent() {
           return;
         } else {
           setLoading(false);
-          console.log(res);
-          router.replace("error");
+          router.replace("admin");
         }
       } catch (error) {
         setError(error);

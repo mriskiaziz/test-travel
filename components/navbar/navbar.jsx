@@ -5,8 +5,10 @@ import { useState, useEffect } from "react";
 import logo from "../../public/logo-perusahaan.png";
 import Image from "next/image";
 import { AiOutlineArrowUp } from "react-icons/ai";
+import { signOut, useSession } from "next-auth/react";
 
 function NavbarComponent() {
+  const { data } = useSession();
   const navbar_list = [
     {
       name: "Beranda",
@@ -89,14 +91,27 @@ function NavbarComponent() {
               );
             })}
 
-            <li className="pt-4 md:pt-0 ms-auto">
+          <li className="pt-4 md:pt-0 ms-auto">
+        {data ? (
+                      <a
+                        onClick={()=>{ signOut() }}
+                        className="text-white bg-red-700 hover:bg-red-800 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 text-center cursor-pointer "
+                      >
+                        LOGOUT
+                      </a>
+
+
+        ) : (
               <a
                 href="/login"
                 className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 text-center "
               >
                 LOGIN
               </a>
-            </li>
+
+        )}
+                            </li>
+
           </ul>
         </div>
       </div>
