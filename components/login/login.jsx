@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function LoginComponent() {
   const [email, setEmail] = useState("");
@@ -15,6 +15,16 @@ function LoginComponent() {
   const { data } = useSession();
 
   const router = useRouter();
+
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
